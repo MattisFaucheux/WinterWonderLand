@@ -41,7 +41,7 @@ public class PlayerMouvement : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
 
-        if (Input.GetKey(sprint))
+        if (Input.GetKey(sprint) && isGrounded)
         {
             controller.Move(move * playerSpeed * Time.deltaTime * sprintSpeed);
         }
