@@ -341,6 +341,17 @@ PrefabInstance:
       propertyPath: playerCam
       value: 
       objectReference: {fileID: 6924741627352258426}
+    - target: {fileID: 1999146136024705702, guid: 1b30d31c331818c4e89a3b39acd37b23,
+        type: 3}
+      propertyPath: flash
+      value: 
+      objectReference: {fileID: 1308429138362182937}
+    - target: {fileID: 1999146136024705702, guid: 1b30d31c331818c4e89a3b39acd37b23,
+        type: 3}
+      propertyPath: impactEffect
+      value: 
+      objectReference: {fileID: 1000010355441670, guid: 02a509a7fa70ed740ba4197e20c5d32d,
+        type: 3}
     - target: {fileID: 6828811767173164191, guid: 1b30d31c331818c4e89a3b39acd37b23,
         type: 3}
       propertyPath: m_LocalPosition.x
