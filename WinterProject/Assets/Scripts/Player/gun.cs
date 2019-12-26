@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class gun : MonoBehaviour
 {
@@ -8,6 +9,14 @@ public class gun : MonoBehaviour
     public float impactForce = 30f;
     public float fireRate = 15f;
 
+    public int maxAmmo = 10;
+    private int currentAmmo;
+    public float reloadTime = 1f;
+    private bool isReloading = false;
+    public Animator animator;
+
+    public KeyCode reload;
+
     public Camera playerCam;
 
     public GameObject flash;
@@ -16,9 +25,33 @@ public class gun : MonoBehaviour
 
     private float nextTimeToFire = 0f;
 
+    void Start()
+    {
+        currentAmmo = maxAmmo;
+    }
+
+    void OnEnable()
+    {
+        isReloading = false;
+        animator.SetBool("Reloading", false);
+
+    }
+
     void Update()
     {
-        if(Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+
+        if(isReloading)
+        {
+            return;
+        }
+
+        if(Input.GetKey(reload))
+        {
+            StartCoroutine(Reload());
+            return;
+        }
+
+        if(Input.GetButton("Fire1") && Time.time >= nextTimeToFire && currentAmmo > 0)
         {
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
@@ -26,11 +59,21 @@ public class gun : MonoBehaviour
                
     }
 
+    IEnumerator Reload()
+    {
+        isReloading = true;
+        animator.SetBool("Reloading", true);
+
+        yield return new WaitForSeconds(reloadTime - 0.25f);
+        currentAmmo = maxAmmo;
+        animator.SetBool("Reloading", false);
+        yield return new WaitForSeconds(0.25f);
+        isReloading = false;
+
+    }
     void Shoot()
     {
-
-        //The flash when we shoot
-        // muzzleFlash.Play();
+        currentAmmo--;
 
         GameObject flashGO = Instantiate(muzzleFlash, flash.transform.position, Quaternion.LookRotation(flash.transform.localPosition));
         flashGO.GetComponent<ParticleSystem>().Play();
