@@ -9,12 +9,6 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(g_anchorInstance, gameObject.transform.position, Quaternion.identity, this.transform);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //Instantiate(g_anchorInstance, gameObject.transform.position, Quaternion.identity, this.transform);
     }
 }
