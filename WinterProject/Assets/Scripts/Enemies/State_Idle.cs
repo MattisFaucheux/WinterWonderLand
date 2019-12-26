@@ -13,6 +13,7 @@ public class State_Idle : State
 
     public override void Enter()
     {
+        g_duration = Random.Range(1.0f, 6.0f);
         g_timer = g_duration;
     }
 
