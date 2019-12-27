@@ -21,7 +21,7 @@ public class Enemy : Target
 
     private void Start()
     {
-        g_enemy = this;
+        g_enemy = GetComponent<Enemy>();
         g_detectDelay = 1.0f;
         g_detectTimer = g_detectDelay;
 
@@ -32,6 +32,7 @@ public class Enemy : Target
 
     private void Update()
     {
+        //PlayerDetect();
         g_detectTimer -= Time.deltaTime;
         if (g_detectTimer < 0)
         {
@@ -47,12 +48,13 @@ public class Enemy : Target
     {
         if (Vector3.Distance(g_enemy.transform.position, g_playerTransform.position) <= 100.0f)
         {
-            
+            Debug.Log(gameObject.name + " is in range");
             RaycastHit hit;
             
             if (Physics.Raycast(g_enemy.transform.position, g_playerTransform.position, out hit))
             {
-                Debug.DrawRay(g_enemy.transform.position, g_playerTransform.position * hit.distance, Color.red);
+                Debug.DrawLine(g_enemy.transform.position, g_playerTransform.position * hit.distance, Color.red);
+                Debug.Log(gameObject.name + " Detected player");
             }
         }
     }
