@@ -346,6 +346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  g_detectDelay: 1
 --- !u!114 &350246705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -888,6 +889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  g_detectDelay: 1
 --- !u!114 &1672822701
 MonoBehaviour:
   m_ObjectHideFlags: 0

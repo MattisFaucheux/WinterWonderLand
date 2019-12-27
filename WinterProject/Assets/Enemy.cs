@@ -16,14 +16,14 @@ public class Enemy : Target
     /// </summary>
     Transform g_playerTransform;
 
-    public float g_duration;
-    private float g_timer;
+    public float g_detectDelay = 1.0f;
+    private float g_detectTimer;
 
     private void Start()
     {
         g_enemy = this;
-        g_duration = 1.0f;
-        g_timer = g_duration;
+        g_detectDelay = 1.0f;
+        g_detectTimer = g_detectDelay;
 
         //Get the player and his transform
         g_player = FindObjectOfType<PlayerMouvement>();
@@ -32,11 +32,11 @@ public class Enemy : Target
 
     private void Update()
     {
-        g_timer -= Time.deltaTime;
-        if (g_timer <= 0)
+        g_detectTimer -= Time.deltaTime;
+        if (g_detectTimer < 0)
         {
             PlayerDetect();
-            g_timer = g_duration;
+            g_detectTimer = g_detectDelay;
         }
     }
 
@@ -47,8 +47,10 @@ public class Enemy : Target
     {
         if (Vector3.Distance(g_enemy.transform.position, g_playerTransform.position) <= 100.0f)
         {
+            
             RaycastHit hit;
-            if (Physics.Raycast(g_enemy.transform.position, g_playerTransform.position, out hit, 100.0f))
+            
+            if (Physics.Raycast(g_enemy.transform.position, g_playerTransform.position, out hit))
             {
                 Debug.DrawRay(g_enemy.transform.position, g_playerTransform.position * hit.distance, Color.red);
             }
