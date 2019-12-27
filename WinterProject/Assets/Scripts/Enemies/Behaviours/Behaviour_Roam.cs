@@ -15,6 +15,11 @@ public class Behaviour_Roam : MonoBehaviour
     /// </summary>
     Transform g_anchor;
 
+    /// <summary>
+    /// The previous destination / position of the agent
+    /// </summary>
+    Vector3 g_prevPos;
+
     private float g_distToPoint = 1.5f;
 
     [System.NonSerialized]
@@ -24,6 +29,7 @@ public class Behaviour_Roam : MonoBehaviour
     {
         g_completed = false;
         g_agent = gameObject.GetComponent<NavMeshAgent>();
+        g_prevPos = g_agent.transform.position;
         g_anchor = FindObjectOfType<AnchorClass>().transform;
         g_agent.SetDestination(RandomDest(g_anchor));
     }
@@ -37,11 +43,24 @@ public class Behaviour_Roam : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Generate random destination
+    /// </summary>
+    /// <param name="m_anchor"></param>
+    /// <returns></returns>
     private Vector3 RandomDest(Transform m_anchor)
     {
         Vector3 m_dest;
         m_dest = new Vector3(m_anchor.position.x + Random.Range(-50, 50), m_anchor.position.y, m_anchor.position.z + Random.Range(-15, 15));
-        Debug.Log(m_dest);
+
+        //Check if path is completable
+        NavMeshPath m_path = new NavMeshPath();
+        g_agent.CalculatePath(m_dest, m_path);
+        if (m_path.status == NavMeshPathStatus.PathPartial)
+        {
+            Debug.Log("Error, going back to prev pos");
+            m_dest = g_prevPos;
+        }
         return m_dest;
     }
 }
