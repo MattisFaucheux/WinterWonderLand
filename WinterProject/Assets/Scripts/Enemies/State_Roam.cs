@@ -9,7 +9,6 @@ public class State_Roam : State
 
     public override void Enter()
     {
-        Debug.Log("Enterred Roam");
         stateMachine.GetComponent<Behaviour_Roam>().enabled = true;
     }
 
