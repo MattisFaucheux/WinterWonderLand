@@ -28,7 +28,7 @@ public class Behaviour_Roam : MonoBehaviour
     void OnEnable()
     {
         g_completed = false;
-        g_agent = gameObject.GetComponent<NavMeshAgent>();
+        g_agent = gameObject.GetComponentInParent<NavMeshAgent>();
         g_prevPos = g_agent.transform.position;
         g_anchor = FindObjectOfType<AnchorClass>().transform;
         g_agent.SetDestination(RandomDest(g_anchor));
