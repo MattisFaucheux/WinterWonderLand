@@ -8,6 +8,7 @@ public class Enemy : Target
     #region Variables
     Enemy g_enemy;
 
+    public bool g_detectedPlayer;
 
     /// <summary>
     /// The player
@@ -32,6 +33,7 @@ public class Enemy : Target
         //Get the player and his transform
         g_player = FindObjectOfType<PlayerMouvement>();
         g_playerTransform = g_player.transform;
+        g_detectedPlayer = false;
     }
 
     private void Update()
@@ -62,6 +64,7 @@ public class Enemy : Target
             {
                 Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.red);
                 Debug.Log(gameObject.name + " Detected player");
+                g_detectedPlayer = true;
             }
         }
     }
