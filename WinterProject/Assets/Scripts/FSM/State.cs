@@ -52,6 +52,11 @@ public abstract class State : ScriptableObject
         ExitToTransition(0);
     }
 
+    public void ExitToSecondTransition()
+    {
+        ExitToTransition(1);
+    }
+
     public StateMachine.Transition GetTransition(int index)
     {
         StateMachine.StatePair pair = stateMachine.GetPairFromState(initialState); // The State/Transitions pair of this state

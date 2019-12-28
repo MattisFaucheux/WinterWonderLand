@@ -25,8 +25,12 @@ public class StateMachine : MonoBehaviour
     public State startingState;
     public State g_activeState;
 
+    [System.NonSerialized]
+    public GameManager g_gm;
+
     private void Awake()
     {
+        g_gm = FindObjectOfType<GameManager>();
         Init();
     }
 

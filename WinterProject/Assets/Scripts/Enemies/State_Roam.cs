@@ -21,6 +21,10 @@ public class State_Roam : State
             stateMachine.GetComponent<Behaviour_Roam>().enabled = false;
             Exit();
         }
+        else if (stateMachine.g_gm.g_hordeStarted == true)
+        {
+            ExitToSecondTransition();
+        }
     }
 
     public override void Exit()

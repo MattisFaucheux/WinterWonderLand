@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using UnityEngine.Events;
 
 public class Enemy : Target
 {
+    #region Variables
     Enemy g_enemy;
+
 
     /// <summary>
     /// The player
@@ -18,6 +21,7 @@ public class Enemy : Target
 
     public float g_detectDelay = 1.0f;
     private float g_detectTimer;
+    #endregion
 
     private void Start()
     {
@@ -32,13 +36,13 @@ public class Enemy : Target
 
     private void Update()
     {
-        PlayerDetect();
-        /*g_detectTimer -= Time.deltaTime;
+        //PlayerDetect();
+        g_detectTimer -= Time.deltaTime;
         if (g_detectTimer < 0)
         {
             PlayerDetect();
             g_detectTimer = g_detectDelay;
-        }*/
+        }
     }
 
     /// <summary>
