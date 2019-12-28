@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 73c3767138be7334d80a4c8eba3e4e40
 ModelImporter:
-  serializedVersion: 19300
+  serializedVersion: 28
   internalIDToNameTable: []
   externalObjects: {}
   materials:
@@ -86,7 +86,6 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
   avatarSetup: 0
