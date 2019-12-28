@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000006, guid: 5be2efe3b9d93ad46b6b5a03ed54d179,
+  m_LightingDataAsset: {fileID: 112000002, guid: 5be2efe3b9d93ad46b6b5a03ed54d179,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -253,6 +253,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: f93834d64d602384b9e28f6f719e76b2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f93834d64d602384b9e28f6f719e76b2,
         type: 3}
