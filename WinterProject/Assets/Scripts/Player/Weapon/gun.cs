@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+
+
 public class gun : MonoBehaviour
 {
+    public Player player;
 
     public float damage = 10f;
     public float range = 100f;
@@ -10,9 +14,9 @@ public class gun : MonoBehaviour
     public float fireRate = 15f;
 
     public int maxAmmo = 10;
-    private int currentAmmo;
+    protected int currentAmmo;
     public float reloadTime = 1f;
-    private bool isReloading = false;
+    protected bool isReloading = false;
     public Animator animator;
 
     public KeyCode reload;
@@ -23,7 +27,7 @@ public class gun : MonoBehaviour
     public GameObject muzzleFlash;
     public GameObject impactEffect;
 
-    private float nextTimeToFire = 0f;
+    protected float nextTimeToFire = 0f;
 
     void Start()
     {
@@ -37,7 +41,7 @@ public class gun : MonoBehaviour
 
     }
 
-    void Update()
+    virtual protected void Update()
     {
 
         if(isReloading)
@@ -59,7 +63,7 @@ public class gun : MonoBehaviour
                
     }
 
-    IEnumerator Reload()
+    virtual protected IEnumerator Reload()
     {
         isReloading = true;
         animator.SetBool("Reloading", true);
@@ -71,7 +75,7 @@ public class gun : MonoBehaviour
         isReloading = false;
 
     }
-    void Shoot()
+    protected void Shoot()
     {
         currentAmmo--;
 

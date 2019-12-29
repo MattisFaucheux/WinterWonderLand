@@ -20,11 +20,6 @@ public class PlayerMouvement : Player
    
     Vector3 velocity;
 
-    
-    void Start()
-    {
-        
-    }
 
     
     void Update()

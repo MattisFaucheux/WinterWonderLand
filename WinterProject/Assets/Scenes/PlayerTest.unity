@@ -213,6 +213,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &140073953 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1743067460994671020, guid: c606e285bbf22be4582470db70fc72a5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1035222567}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &159691684
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -282,6 +288,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8258c7a559c84fa4bacf158f3873d8b8, type: 3}
+--- !u!114 &228109603 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8658453188274133265, guid: c606e285bbf22be4582470db70fc72a5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1035222567}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 785f3b4820f3a7941baf1d7d96cd1d4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &280015861
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -351,6 +369,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8258c7a559c84fa4bacf158f3873d8b8, type: 3}
+--- !u!1 &346483117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 727586154630235231, guid: c606e285bbf22be4582470db70fc72a5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1035222567}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &374692045
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -420,6 +444,45 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0acfe00311243b9419a17a8ec797b67b, type: 3}
+--- !u!95 &398843736 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 476206465363106415, guid: c606e285bbf22be4582470db70fc72a5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1035222567}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &473073674 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 795145209761291097, guid: c606e285bbf22be4582470db70fc72a5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1035222567}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &473073676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473073674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7197b33f19b3a624eba53f6836bec302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 228109603}
+  damage: 10
+  range: 100
+  impactForce: 30
+  fireRate: 15
+  maxAmmo: 10
+  reloadTime: 1
+  animator: {fileID: 398843736}
+  reload: 114
+  playerCam: {fileID: 1411931829}
+  flash: {fileID: 346483117}
+  muzzleFlash: {fileID: 1000010254994808, guid: 9defeac88977c0d448aa4541073ee9e4,
+    type: 3}
+  impactEffect: {fileID: 1000010355441670, guid: 02a509a7fa70ed740ba4197e20c5d32d,
+    type: 3}
 --- !u!1001 &498830264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -489,6 +552,45 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8258c7a559c84fa4bacf158f3873d8b8, type: 3}
+--- !u!1 &883746446 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1743067460791359657, guid: c606e285bbf22be4582470db70fc72a5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1035222567}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &913518361 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8119734325017743828, guid: c606e285bbf22be4582470db70fc72a5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1035222567}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &913518363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913518361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d64bda453ab00c643a09eaef6e0fc073, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 228109603}
+  damage: 50
+  range: 100
+  impactForce: 30
+  fireRate: 40
+  maxAmmo: 10
+  reloadTime: 1
+  animator: {fileID: 398843736}
+  reload: 114
+  playerCam: {fileID: 1411931829}
+  flash: {fileID: 140073953}
+  muzzleFlash: {fileID: 1000010254994808, guid: 9defeac88977c0d448aa4541073ee9e4,
+    type: 3}
+  impactEffect: {fileID: 1000010355441670, guid: 02a509a7fa70ed740ba4197e20c5d32d,
+    type: 3}
 --- !u!1 &931435516
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,6 +733,44 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 837504069, guid: c606e285bbf22be4582470db70fc72a5, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 228109603}
+    - target: {fileID: 837504069, guid: c606e285bbf22be4582470db70fc72a5, type: 3}
+      propertyPath: reloadTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 256417447550975193, guid: c606e285bbf22be4582470db70fc72a5,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 228109603}
+    - target: {fileID: 256417447646176766, guid: c606e285bbf22be4582470db70fc72a5,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 228109603}
+    - target: {fileID: 795145209761291097, guid: c606e285bbf22be4582470db70fc72a5,
+        type: 3}
+      propertyPath: m_Name
+      value: gunLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 8119734324383697139, guid: c606e285bbf22be4582470db70fc72a5,
+        type: 3}
+      propertyPath: m_Name
+      value: gunMedium
+      objectReference: {fileID: 0}
+    - target: {fileID: 8119734325017743828, guid: c606e285bbf22be4582470db70fc72a5,
+        type: 3}
+      propertyPath: m_Name
+      value: gunHeavy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658453187423891315, guid: c606e285bbf22be4582470db70fc72a5,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 228109603}
     - target: {fileID: 8658453188274133266, guid: c606e285bbf22be4582470db70fc72a5,
         type: 3}
       propertyPath: m_Name
@@ -691,8 +831,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8658453187423891315, guid: c606e285bbf22be4582470db70fc72a5, type: 3}
+    - {fileID: 256417447550975193, guid: c606e285bbf22be4582470db70fc72a5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c606e285bbf22be4582470db70fc72a5, type: 3}
+--- !u!20 &1411931829 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8658453188758896188, guid: c606e285bbf22be4582470db70fc72a5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1035222567}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1534503030
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -975,6 +1123,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8258c7a559c84fa4bacf158f3873d8b8, type: 3}
+--- !u!1 &1893585671 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8119734324383697139, guid: c606e285bbf22be4582470db70fc72a5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1035222567}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1893585673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893585671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9693f313fb73af4d89377531c631a42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 228109603}
+  damage: 5
+  range: 100
+  impactForce: 30
+  fireRate: 10
+  maxAmmo: 10
+  reloadTime: 1
+  animator: {fileID: 398843736}
+  reload: 114
+  playerCam: {fileID: 1411931829}
+  flash: {fileID: 883746446}
+  muzzleFlash: {fileID: 1000010254994808, guid: 9defeac88977c0d448aa4541073ee9e4,
+    type: 3}
+  impactEffect: {fileID: 1000010355441670, guid: 02a509a7fa70ed740ba4197e20c5d32d,
+    type: 3}
 --- !u!1001 &8468697043963196967
 PrefabInstance:
   m_ObjectHideFlags: 0

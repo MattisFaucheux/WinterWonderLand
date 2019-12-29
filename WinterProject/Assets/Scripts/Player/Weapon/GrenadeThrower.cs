@@ -9,6 +9,8 @@ public class GrenadeThrower : MonoBehaviour
     public GameObject grenadePrefab;
     public GameObject grenadeFire;
 
+    public Player player;
+
     public float reloadTime = 4f;
     private float countdown;
     private bool throwed = false;
@@ -27,7 +29,7 @@ public class GrenadeThrower : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(input) && !throwed)
+        if (Input.GetKey(input) && !throwed && player.grenade > 0)
         {
             ThrowGrenade();
         }
@@ -38,6 +40,7 @@ public class GrenadeThrower : MonoBehaviour
     void ThrowGrenade()
     {
         GameObject grenade = Instantiate(grenadePrefab, grenadeFire.transform.position, grenadeFire.transform.rotation);
+        player.grenade -= 1;
         Rigidbody rb = grenade.GetComponent<Rigidbody>();
         rb.AddForce(grenadeFire.transform.forward * throwForce, ForceMode.VelocityChange);
 
