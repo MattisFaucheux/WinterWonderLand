@@ -82,6 +82,13 @@ public class gun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, range))
         {
+
+            Explosive explosive = hit.transform.GetComponent<Explosive>();
+            if(explosive != null)
+            {
+                explosive.Explode();
+            }
+
             Target target = hit.transform.GetComponent<Target>();
             if(target != null)
             {

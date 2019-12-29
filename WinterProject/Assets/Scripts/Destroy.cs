@@ -2,26 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Grenade : Explosive
+public class Destroy : MonoBehaviour
 {
-
-    public float delay = 3f;
+    public float TimetoDelete = 1f;
     private float countdown;
-
-    // Start is called before the first frame update
     void Start()
     {
-        countdown = delay;
+        countdown = TimetoDelete;
     }
 
     // Update is called once per frame
     void Update()
     {
         countdown -= Time.deltaTime;
-
-        if(countdown <= 0 && !hasExploded) 
+        if(countdown <= 0)
         {
-            Explode();
+            Destroy(gameObject);
         }
     }
 }
