@@ -80,15 +80,15 @@ public class WeaponSwitch : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.Alpha1))
+        if(Input.GetKeyDown(KeyCode.Alpha1) && IsLightWeapon)
         {
             selectedWeaponTab = 0;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2) && IsMediumWeapon)
         {
             selectedWeaponTab = 1;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Alpha3) && IsHeavyWeapon)
         {
             selectedWeaponTab = 2;
         }
