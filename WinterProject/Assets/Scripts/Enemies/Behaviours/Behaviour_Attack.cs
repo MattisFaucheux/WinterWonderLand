@@ -19,6 +19,8 @@ public class Behaviour_Attack : MonoBehaviour
     [System.NonSerialized]
     public bool g_completed = false;
 
+    private const int DMG = 5;
+
     [SerializeField]
     private float g_attRange = 2.5f; //The range of the zombie melee attack
 
@@ -35,6 +37,11 @@ public class Behaviour_Attack : MonoBehaviour
         g_completed = false;
         g_agent = gameObject.GetComponentInParent<NavMeshAgent>();
         g_agent.SetDestination(g_target.position);
+
+        if (g_attPoint == null)
+        {
+            Debug.Log("Please set the Attack point in dedicated variable slot in editor");
+        }
     }
 
     // Update is called once per frame
@@ -53,11 +60,15 @@ public class Behaviour_Attack : MonoBehaviour
 
     private void Attack()
     {
+        if (g_attPoint == null)
+            return;
+
         //Contain all collisions with player
         Collider[] m_playerCol = Physics.OverlapSphere(g_attPoint.position, g_attRange, g_playerLayer);
 
         foreach (Collider m_player in m_playerCol)
         {
+            FindObjectOfType<Player>().TakeDamage(DMG);
             Debug.Log("Player was hit");
         }
     }
