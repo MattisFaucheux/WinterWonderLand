@@ -24,6 +24,9 @@ public class Behaviour_Attack : MonoBehaviour
     [SerializeField]
     private float g_attRange = 2.5f; //The range of the zombie melee attack
 
+    private float g_attRate = 1.0f;
+    private float g_nextAttTime = 0.0f;
+
     public Transform g_attPoint;
 
     public LayerMask g_playerLayer;
@@ -50,7 +53,11 @@ public class Behaviour_Attack : MonoBehaviour
         if (Vector3.Distance(g_agent.destination, g_agent.transform.position) < g_attRange)
         {
             g_agent.isStopped = true; //Stops the agent
-            Attack();
+            if (Time.time >= g_nextAttTime)
+            {
+                Attack();
+                g_nextAttTime = Time.time + 1f / g_attRate;
+            }
         }
     }
 
@@ -69,7 +76,6 @@ public class Behaviour_Attack : MonoBehaviour
         foreach (Collider m_player in m_playerCol)
         {
             FindObjectOfType<Player>().TakeDamage(DMG);
-            Debug.Log("Player was hit");
         }
     }
 

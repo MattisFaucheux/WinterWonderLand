@@ -21,7 +21,10 @@ public class Player : Target
 
         foreach (Transform m_children in transform)
         {
-            m_children.gameObject.SetActive(false);
+            if (m_children.gameObject.tag != "MainCamera")
+            {
+                m_children.gameObject.SetActive(false);
+            }
         }
     }
 }
