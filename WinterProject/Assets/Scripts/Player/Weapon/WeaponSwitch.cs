@@ -6,7 +6,11 @@ public class WeaponSwitch : MonoBehaviour
 {
 
     public Player player;
-    public int selectedWeapon;
+
+    public int[] playerWeapons = new int[3];
+
+    public int selectedWeaponTab;
+    public int selectedWeaponList;
 
     void Start()
     {
@@ -15,47 +19,49 @@ public class WeaponSwitch : MonoBehaviour
 
     void Update()
     {
-        int previousWeapon = selectedWeapon;
+        int previousWeapon = selectedWeaponTab;
 
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
-            if (selectedWeapon >= transform.childCount - 1)
+            if (selectedWeaponTab >= 2)
             {
-                selectedWeapon = 0;
+                selectedWeaponTab = 0;
             }
             else
             {
-                selectedWeapon++;
+                selectedWeaponTab++;
             }
         }
         if (Input.GetAxis("Mouse ScrollWheel") < 0f)
         {
-            if (selectedWeapon <= 0)
+            if (selectedWeaponTab <= 0)
             {
-                selectedWeapon = transform.childCount - 1;
+                selectedWeaponTab = 2;
             }
             else
             {
-                selectedWeapon--;
+                selectedWeaponTab--;
             }
         }
 
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
-            selectedWeapon = 0;
+            selectedWeaponTab = 0;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2) && transform.childCount >= 2)
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            selectedWeapon = 1;
+            selectedWeaponTab = 1;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3) && transform.childCount >= 3)
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            selectedWeapon = 2;
+            selectedWeaponTab = 2;
         }
 
 
-        if (previousWeapon != selectedWeapon)
+
+        if (previousWeapon != selectedWeaponTab)
         {
+            selectedWeaponList = playerWeapons[selectedWeaponTab];
             SelectWeapon();
         }
        
@@ -66,7 +72,7 @@ public class WeaponSwitch : MonoBehaviour
         int i = 0;
         foreach (Transform weapon in transform)
         {
-            if(i == selectedWeapon)
+            if(i == selectedWeaponList)
             {
                 weapon.gameObject.SetActive(true);
             }
@@ -76,5 +82,36 @@ public class WeaponSwitch : MonoBehaviour
             }
             i++;
         }
+    }
+
+    public void PickupWeapon(GameObject weaponType)
+    {
+
+        int i = 0;
+        foreach (Transform weapon in transform)
+        {
+
+            if(weapon.tag == weaponType.tag)
+            {
+                if(weapon.GetComponent<LightGun>())
+                {
+                    playerWeapons[0] = i;
+                }
+                else if(weapon.GetComponent<MediumGun>())
+                {
+                    playerWeapons[1] = i;
+                }
+                else if(weapon.GetComponent<HeavyGun>())
+                {
+                    playerWeapons[2] = i;
+                }
+                selectedWeaponList = playerWeapons[selectedWeaponTab];
+                SelectWeapon();
+                return;
+            }
+            i++;
+        }
+
+        
     }
 }

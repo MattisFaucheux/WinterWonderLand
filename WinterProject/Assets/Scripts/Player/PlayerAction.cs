@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMouvement : Player
+public class PlayerAction : Player
 {
     public CharacterController controller;
-
     public float playerSpeed = 12f;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
@@ -16,17 +15,26 @@ public class PlayerMouvement : Player
     public LayerMask groundMask;
     bool isGrounded;
 
+    public LayerMask ammoMask;
+    public float interactRange = 5f;
+    public Camera playerCam;
+
+    public LayerMask gunMask;
+    public WeaponSwitch weaponSwitch;
+
+
     public KeyCode sprint;
-   
-    Vector3 velocity;
+    public KeyCode interract;
+
+    private Vector3 velocity;
 
 
-    
+
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-        if(isGrounded && velocity.y < 0)
+        if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
@@ -45,12 +53,30 @@ public class PlayerMouvement : Player
             controller.Move(move * playerSpeed * Time.deltaTime);
         }
 
-        if(Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+
+        if (Input.GetKey(interract))
+        {
+            if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, interactRange, ammoMask))
+            {
+                lightCharger = maxLightCharger;
+                mediumCharger = maxMediumCharger;
+                heavyCharger = maxHeavyCharger;
+                grenade = maxGrenade;
+            }
+
+            RaycastHit hit;
+            if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, interactRange, gunMask))
+            {
+                GameObject gm = hit.transform.gameObject;
+                weaponSwitch.PickupWeapon(gm);
+            }
+        }
     }
 }

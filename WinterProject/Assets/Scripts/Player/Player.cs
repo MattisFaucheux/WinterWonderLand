@@ -15,10 +15,4 @@ public class Player : Target
     public int maxHeavyCharger = 5;
     public int maxGrenade = 5;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
 }

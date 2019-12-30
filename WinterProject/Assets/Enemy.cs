@@ -13,7 +13,7 @@ public class Enemy : Target
     /// <summary>
     /// The player
     /// </summary>
-    PlayerMouvement g_player;
+    Player g_player;
 
     /// <summary>
     /// The player's transform
@@ -31,7 +31,7 @@ public class Enemy : Target
         g_detectTimer = g_detectDelay;
 
         //Get the player and his transform
-        g_player = FindObjectOfType<PlayerMouvement>();
+        g_player = FindObjectOfType<Player>();
         g_playerTransform = g_player.transform;
         g_detectedPlayer = false;
     }

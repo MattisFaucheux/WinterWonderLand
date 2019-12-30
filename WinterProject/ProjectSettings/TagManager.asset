@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - pistol
+  - ar
+  - shotgun
+  - sniper
   layers:
   - Default
   - TransparentFX
@@ -14,6 +18,7 @@ TagManager:
   - 
   - 
   - Ground
+  - AmmoBox
   - 
   - 
   - 
@@ -35,8 +40,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - gun
   m_SortingLayers:
   - name: Default
     uniqueID: 0

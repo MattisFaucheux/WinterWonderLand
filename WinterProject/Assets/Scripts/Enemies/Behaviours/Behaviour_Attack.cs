@@ -22,7 +22,7 @@ public class Behaviour_Attack : MonoBehaviour
     // Start is called before the first frame update
     void OnEnable()
     {
-        g_target = FindObjectOfType<PlayerMouvement>().transform;
+        g_target = FindObjectOfType<Player>().transform;
         g_completed = false;
         g_agent = gameObject.GetComponentInParent<NavMeshAgent>();
         g_agent.SetDestination(g_target.position);
