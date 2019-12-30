@@ -13,7 +13,7 @@ public class Target : MonoBehaviour
         }
     }
 
-    void Die()
+    public virtual void Die()
     {
         Destroy(gameObject);
     }

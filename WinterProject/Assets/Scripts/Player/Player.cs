@@ -15,4 +15,13 @@ public class Player : Target
     public int maxHeavyCharger = 5;
     public int maxGrenade = 5;
 
+    public override void Die()
+    {
+        enabled = false;
+
+        foreach (Transform m_children in transform)
+        {
+            m_children.gameObject.SetActive(false);
+        }
+    }
 }
