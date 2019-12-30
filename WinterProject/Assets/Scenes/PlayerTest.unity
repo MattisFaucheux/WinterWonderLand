@@ -282,18 +282,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8258c7a559c84fa4bacf158f3873d8b8, type: 3}
---- !u!114 &228109603 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8658453188274133265, guid: c606e285bbf22be4582470db70fc72a5,
-    type: 3}
-  m_PrefabInstance: {fileID: 1035222567}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 785f3b4820f3a7941baf1d7d96cd1d4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &280015861
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -432,12 +420,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0acfe00311243b9419a17a8ec797b67b, type: 3}
---- !u!95 &398843736 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 476206465363106415, guid: c606e285bbf22be4582470db70fc72a5,
-    type: 3}
-  m_PrefabInstance: {fileID: 1035222567}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &498830264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -711,12 +693,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c606e285bbf22be4582470db70fc72a5, type: 3}
---- !u!20 &1411931829 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 8658453188758896188, guid: c606e285bbf22be4582470db70fc72a5,
-    type: 3}
-  m_PrefabInstance: {fileID: 1035222567}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1472870958 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7582784342533940604, guid: 7ba23b646ae98b849bbac31f516bdd43,
@@ -736,33 +712,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.033386774, y: 0.15638736, z: 0.87260044}
   m_Center: {x: -0.000000008381903, y: -0.035896156, z: 0.067818806}
---- !u!114 &1472870963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1472870958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed55e7fb200868a4c860b1e91427c75e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 228109603}
-  damage: 10
-  range: 100
-  impactForce: 30
-  fireRate: 15
-  maxAmmo: 10
-  reloadTime: 1
-  animator: {fileID: 398843736}
-  reload: 117
-  playerCam: {fileID: 1411931829}
-  flash: {fileID: 1888640934}
-  muzzleFlash: {fileID: 1000010254994808, guid: 9defeac88977c0d448aa4541073ee9e4,
-    type: 3}
-  impactEffect: {fileID: 1000010355441670, guid: 02a509a7fa70ed740ba4197e20c5d32d,
-    type: 3}
 --- !u!1001 &1534503030
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1045,12 +994,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8258c7a559c84fa4bacf158f3873d8b8, type: 3}
---- !u!1 &1888640934 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3027066331599127097, guid: c606e285bbf22be4582470db70fc72a5,
-    type: 3}
-  m_PrefabInstance: {fileID: 1035222567}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2140334871
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1126,7 +1069,7 @@ PrefabInstance:
     - target: {fileID: 7582784342533940604, guid: 7ba23b646ae98b849bbac31f516bdd43,
         type: 3}
       propertyPath: m_TagString
-      value: ar
+      value: sniper
       objectReference: {fileID: 0}
     - target: {fileID: 7582784342533940604, guid: 7ba23b646ae98b849bbac31f516bdd43,
         type: 3}

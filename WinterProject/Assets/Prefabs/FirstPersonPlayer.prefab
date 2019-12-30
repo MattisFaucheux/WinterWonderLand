@@ -76,9 +76,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8658453188274133265}
-  playerWeapons: 000000000200000003000000
+  playerWeapons: 000000000000000000000000
   selectedWeaponTab: 0
   selectedWeaponList: 0
+  IsLightWeapon: 1
+  IsMediumWeapon: 0
+  IsHeavyWeapon: 0
 --- !u!95 &476206465363106415
 Animator:
   serializedVersion: 3
@@ -644,8 +647,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3180511507625754797, guid: 221286cc38076674a86420149f135b63, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 221286cc38076674a86420149f135b63, type: 3}
 --- !u!1 &8119734325017743828 stripped
 GameObject:
@@ -849,8 +851,7 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 30
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5681941438996947707, guid: 555ef2c33493a9c428dffe8a53529dda, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 555ef2c33493a9c428dffe8a53529dda, type: 3}
 --- !u!1 &8119734324383697139 stripped
 GameObject:
@@ -953,7 +954,6 @@ PrefabInstance:
       value: pistol
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 7076169270215800361, guid: 7ba23b646ae98b849bbac31f516bdd43, type: 3}
     - {fileID: 7076169270215800361, guid: 7ba23b646ae98b849bbac31f516bdd43, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7ba23b646ae98b849bbac31f516bdd43, type: 3}
 --- !u!1 &795145209761291097 stripped
