@@ -13,7 +13,7 @@ public class PlayerAction : Player
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
-    bool isGrounded;
+    private bool isGrounded;
 
     public LayerMask ammoMask;
     public float interactRange = 5f;
@@ -22,6 +22,7 @@ public class PlayerAction : Player
     public LayerMask gunMask;
     public WeaponSwitch weaponSwitch;
 
+    public LayerMask healMask;
 
     public KeyCode sprint;
     public KeyCode interract;
@@ -69,6 +70,11 @@ public class PlayerAction : Player
                 mediumCharger = maxMediumCharger;
                 heavyCharger = maxHeavyCharger;
                 grenade = maxGrenade;
+            }
+
+            if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, interactRange, healMask))
+            {
+                health = maxHealth;
             }
 
             RaycastHit hit;

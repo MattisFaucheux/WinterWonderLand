@@ -3,6 +3,7 @@
 public class Target : MonoBehaviour
 {
     public float health = 50f;
+    public float maxHealth = 50f;
 
     public void TakeDamage(float amount)
     {
