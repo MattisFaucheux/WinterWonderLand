@@ -29,16 +29,16 @@ public class gun : MonoBehaviour
 
     protected float nextTimeToFire = 0f;
 
+
     void Start()
     {
         currentAmmo = maxAmmo;
     }
 
-    void OnEnable()
+    virtual protected void OnEnable()
     {
         isReloading = false;
         animator.SetBool("Reloading", false);
-
     }
 
     virtual protected void Update()
@@ -75,10 +75,9 @@ public class gun : MonoBehaviour
         isReloading = false;
 
     }
-    protected void Shoot()
+    virtual protected void Shoot()
     {
         currentAmmo--;
-
         GameObject flashGO = Instantiate(muzzleFlash, flash.transform.position, flash.transform.rotation);
         flashGO.GetComponent<ParticleSystem>().Play();
         Destroy(flashGO, 0.1f);
