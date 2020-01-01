@@ -62,7 +62,7 @@ public class PlayerAction : Player
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
-        if (Input.GetKey(interract))
+        if (Input.GetKeyDown(interract))
         {
             if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, interactRange, ammoMask))
             {
@@ -82,6 +82,16 @@ public class PlayerAction : Player
             {
                 GameObject gm = hit.transform.gameObject;
                 weaponSwitch.PickupWeapon(gm);
+            }
+            
+            if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, interactRange))
+            {
+                Activatable activate = hit.transform.gameObject.GetComponent<Activatable>(); ;
+                if (activate != null)
+                {
+                    Debug.Log("t");
+                    activate.Switch();
+                }
             }
         }
     }
