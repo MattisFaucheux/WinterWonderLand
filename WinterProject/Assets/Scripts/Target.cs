@@ -5,7 +5,7 @@ public class Target : MonoBehaviour
     public float health = 50f;
     public float maxHealth = 50f;
 
-    public void TakeDamage(float amount)
+    virtual public void TakeDamage(float amount)
     {
         health -= amount;
         if(health <= 0f)

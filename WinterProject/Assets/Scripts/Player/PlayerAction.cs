@@ -17,7 +17,6 @@ public class PlayerAction : Player
 
     public LayerMask ammoMask;
     public float interactRange = 5f;
-    public Camera playerCam;
 
     public LayerMask gunMask;
     public WeaponSwitch weaponSwitch;

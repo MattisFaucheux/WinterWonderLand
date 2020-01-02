@@ -15,6 +15,8 @@ public class Player : Target
     public int maxHeavyCharger = 5;
     public int maxGrenade = 5;
 
+    public Camera playerCam;
+
     public override void Die()
     {
         enabled = false;
@@ -25,6 +27,25 @@ public class Player : Target
             {
                 m_children.gameObject.SetActive(false);
             }
+
+        }
+
+        foreach (Transform n_children in playerCam.transform)
+        {
+            n_children.gameObject.SetActive(false);
+        }
+
+        playerCam.GetComponent<MouseLook>().enabled = false;
+    }
+
+    override public void TakeDamage(float amount)
+    {
+
+        health -= amount;
+        if (health <= 0f)
+        {
+            Die();
         }
     }
+
 }
