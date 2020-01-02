@@ -10,11 +10,12 @@ public class Lever : Activatable
         if (isActivated)
         {
             isActivated = false;
+            animator.SetBool("IsActivated", false);
         }
         else
         {
             isActivated = true;
+            animator.SetBool("IsActivated", true);
         }
-
     }
 }
