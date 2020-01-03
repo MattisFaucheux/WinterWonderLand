@@ -25,6 +25,10 @@ public class State_Idle : State
         {
             Exit();
         }
+        else if (stateMachine.g_gm.g_hordeStarted == true)
+        {
+            ExitToSecondTransition();
+        }
     }
 
     public override void Exit()

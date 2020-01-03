@@ -61,6 +61,11 @@ public class Behaviour_Attack : MonoBehaviour
         }
     }
 
+    private void LateUpdate()
+    {
+        g_agent.SetDestination(g_target.position);
+    }
+
     #endregion
 
     #region Custom Methods
