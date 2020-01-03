@@ -9,13 +9,15 @@ public class Spawner : MonoBehaviour
 
     public GameObject prefab;
 
-    private void LateUpdate()
+    private GameManager gameManager;
+    private void Start()
     {
-        Spawn();
+        gameManager = FindObjectOfType<GameManager>();
+        //g_spawns.AddListener(gameManager.HordeStarted);
     }
 
     public void Spawn()
     {
-        Instantiate(prefab, transform.position, Quaternion.identity);
+        //Instantiate(prefab, transform.position, Quaternion.identity);
     }
 }

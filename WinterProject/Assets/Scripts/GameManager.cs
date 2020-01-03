@@ -12,7 +12,10 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public UnityEvent g_hordeTrigger;
 
-    
+    /// <summary>
+    /// Base number of zombies in a wave
+    /// </summary>
+    private const int HORDESIZE = 10;
 
     [SerializeField]
     private List<Enemy> enemies = new List<Enemy>();
@@ -33,7 +36,8 @@ public class GameManager : MonoBehaviour
 
         foreach (Spawner spawner in spawners)
         {
-            spawner.g_spawns.AddListener(HordeStarted);
+            //g_hordeTrigger.AddListener(HordeStarted);
+            //spawner.g_spawns.AddListener(HordeStarted);
         }
     }
 
@@ -48,7 +52,7 @@ public class GameManager : MonoBehaviour
         }
 
         //Debug to test event cast
-        if (Input.anyKey)
+        if (Input.GetKey(KeyCode.A));
         {
             HordeStarted();
         }
@@ -61,6 +65,10 @@ public class GameManager : MonoBehaviour
 
     public void HordeStarted()
     {
-
+        foreach (Spawner spawner in spawners)
+        {
+            g_hordeTrigger.Invoke();
+        }
+        
     }
 }
