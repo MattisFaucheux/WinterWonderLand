@@ -5,6 +5,8 @@ L'objectif était de faire un petit jeu FPS / zombie, style Left4Dead.
 
 Made with Unity.
 
+Duration: 10 days
+
 GAME BY:
 
 Pierre Rencruel - Designer
